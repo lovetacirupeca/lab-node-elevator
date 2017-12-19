@@ -25,7 +25,10 @@ class Elevator {
     this.floor == 0 ? console.log("You are in the vestibule") : this.floor--;
     this.direction = "down";
   }
-  call() { }
+  call(person) {
+    this.waitingList.push(person);
+    this.requests.push(person.originFloor);
+  }
   log() {
     console.log(`Direction: ${this.direction} | Floor: ${this.floor}`);
   }
